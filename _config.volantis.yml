@@ -149,7 +149,7 @@ sidebar:
           unit: '篇'
         runtime:
           enable: true
-          data: '2022/12/04'    # 填写建站日期
+          data: '2026/08/22'    # 填写建站日期
           text: '已运行时间：'
           unit: '天'
         visitcounter:
@@ -181,21 +181,129 @@ sidebar:
       header:
         icon: fa-solid fa-clock WISTERIA
         title: 最近更新
-    text:
-      class: text
-      display: [desktop] # [desktop, mobile]
-      header:
-        icon: fab fa-github
-        title: 点个赞吧
-        url: https://github.com/xaoxuu/ 
-        content:
-          - '您的赞对我来说很重要，如果您喜欢本主题，希望能够给下面的项目点个赞来支持一下。'
+    # text:
+    #   class: text
+    #   display: [desktop] # [desktop, mobile]
+    #   header:
+    #     icon: fab fa-github
+    #     title: 点个赞吧
+    #     url: https://github.com/xaoxuu/ 
+    #     content:
+    #       - '您的赞对我来说很重要，如果您喜欢本主题，希望能够给下面的项目点个赞来支持一下。'
+
+
+analytics:
+  busuanzi: https://gcore.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+  leancloud: # 请使用自己的 id & key 以防止数据丢失
+    app_id: # 应用 APP_ID
+    app_key: # 应用 APP_KEY
+    custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
+
 ############################### Sidebar ############################### > end
 
 
 
+color_scheme:
+  # ------------
+  # 通用颜色
+  common:
+    # 主题色
+    theme: '#44D7B6'
+    # 链接色
+    link: '#2196f3'
+    # 按钮色
+    button: '#44D7B6'
+    # 鼠标放到交互元素上时的色
+    hover: '#ff5722'
+    # 主题色块内部的文字颜色
+    inner: '#fff'
+    # 选中区域文字的背景颜色
+    selection: 'alpha(#2196f3, 0.2)'
+  # ------------
+  # 亮色主题（默认）
+  light:
+    # 网站背景色
+    site_bg: '#f4f4f4'
+    # 网站背景上的文字
+    site_inner: '#fff'
+    # 网站页脚文字
+    site_footer: '#fff'
+
+    # 卡片背景色
+    card: '#fff'
+    # 卡片上的普通文字
+    text: '#444'
+
+    # 区块和代码块背景色
+    block: '#f6f6f6'
+    # 代码块高亮时的背景色
+    codeblock: '#f6f6f6'
+    # 行内代码颜色
+    inlinecode: '#D56D28'
+
+    # 文章部分
+    h1: '#444'
+    h2: '#444'
+    h3: '#444'
+    h4: '#444'
+    h5: '#444'
+    h6: '#444'
+    p: '#444'
+
+    # 列表文字
+    list: '#666'
+    # 列表 hover 时的文字
+    list_hl: 'mix($color-theme, #000, 80)'
+    # 辅助性文字
+    meta: '#888'
+  # ------------
+  # 暗色主题
+  dark:
+    # 网站背景色
+    site_bg: '#222'
+    # 网站背景上的文字
+    site_inner: '#eee'
+    # 网站页脚文字
+    site_footer: '#aaa'
+    # 卡片背景色
+    card: '#444'
+    # 卡片上的普通文字
+    text: '#eee'
+
+    # 区块和代码块背景色
+    block: '#3a3a3a'
+    # 代码块高亮时的背景色
+    codeblock: '#343a3c'
+    # 行内代码颜色
+    inlinecode: '#D56D28'
+
+    # 文章部分
+    h1: '#eee'
+    h2: '#eee'
+    h3: '#ddd'
+    h4: '#ddd'
+    h5: '#ddd'
+    h6: '#ddd'
+    p: '#bbb'
+
+    # 列表文字
+    list: '#aaa'
+    # 列表 hover 时的文字
+    list_hl: 'mix($color-theme, #fff, 80)'
+    # 辅助性文字
+    meta: '#888'
+    # 夜间图片亮度
+    brightness: 70%
+  body:
+    effect: [blur] # [shadow, floatable, blur]
+    highlight:
+      language: true # show language of codeblock
+      copy_btn: true  
+
 
 plugins:
+  busuanzi:
+      enable: true
   parallax:
     enable: false
     position: fixed
