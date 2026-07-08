@@ -306,9 +306,9 @@ article:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar: #文章作者的头像 # https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
-        name: #作者名字
-        url: /
+        avatar: /blog/assets/profile.webp #文章作者的头像
+        name: HaoyiGu
+        url: /blog/about/
       # 文章创建日期
       date:
         icon: fa-solid fa-calendar-alt
@@ -484,7 +484,7 @@ comments:
   # https://github.com/laymonage/giscus
   giscus:
     # 以下配置按照 yml 格式增删填写即可
-     repo: #库的名字
+     repo: "HaoyiGu/comments"
      repo-id: "R_kgDOTRjyog"
      category: Announcements
      category-id: "DIC_kwDOTRjyos4DAwcW"
@@ -515,3 +515,5 @@ plugins:
     service: hexo
   wordcount:
     enable: true
+  lazyload:
+    enable: false
