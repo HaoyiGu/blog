@@ -1,0 +1,54 @@
+<script>
+(function () {
+  var PARALLAX_FOCUS_X = 15; // Original image focus: 0 = left edge, 50 = center, 100 = right edge
+  var PARALLAX_FOCUS_Y = 50; // Original image focus: 0 = top edge, 50 = center, 100 = bottom edge
+
+  function setParallaxFocus() {
+    if (typeof Parallax === 'undefined' || !Parallax.renderItem || Parallax.__focusPatched) {
+      return Boolean(typeof Parallax !== 'undefined' && Parallax.__focusPatched);
+    }
+
+    var originalRenderItem = Parallax.renderItem;
+    Parallax.renderItem = function (mirror, slider) {
+      originalRenderItem.call(this, mirror, slider);
+
+      var focusX = Math.max(0, Math.min(100, PARALLAX_FOCUS_X)) / 100;
+      var focusY = Math.max(0, Math.min(100, PARALLAX_FOCUS_Y)) / 100;
+
+      if (Parallax.options.imageWidth > Parallax.options.boxWidth) {
+        var hiddenWidth = Parallax.options.imageWidth - Parallax.options.boxWidth;
+        var desiredOffset = (Parallax.options.boxWidth / 2) - (Parallax.options.imageWidth * focusX);
+        Parallax.options.offsetLeft = Math.round(Math.max(-hiddenWidth, Math.min(0, desiredOffset)));
+      }
+      if (Parallax.options.imageHeight > Parallax.options.boxHeight) {
+        var hiddenHeight = Parallax.options.imageHeight - Parallax.options.boxHeight;
+        var desiredTop = (Parallax.options.boxHeight / 2) - (Parallax.options.imageHeight * focusY);
+        Parallax.options.offsetTop = Math.round(Math.max(-hiddenHeight, Math.min(0, desiredTop)));
+      }
+
+      slider.style.transform =
+        "translate3d(" +
+        Parallax.options.offsetLeft +
+        "px, " +
+        Parallax.options.offsetTop +
+        "px, 0px)";
+    };
+    Parallax.__focusPatched = true;
+    if (Parallax.update) {
+      Parallax.update();
+    }
+    return true;
+  }
+
+  if (!setParallaxFocus()) {
+    var timer = setInterval(function () {
+      if (setParallaxFocus()) {
+        clearInterval(timer);
+      }
+    }, 50);
+    setTimeout(function () {
+      clearInterval(timer);
+    }, 5000);
+  }
+})();
+</script>
