@@ -1,5 +1,6 @@
 title: Gallery Post
 date: 2013-12-25 00:16:18
+published: false
 photos:
 - https://cdn.jsdelivr.net/gh/hexojs/hexo-theme-unit-test@master/source/assets/wallpaper-878514.jpg
 - https://cdn.jsdelivr.net/gh/hexojs/hexo-theme-unit-test@master/source/assets/wallpaper-2311325.jpg

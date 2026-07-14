@@ -86,7 +86,7 @@ sidebar:
       url: /about/
       title: #名字
       subtitle:
-      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+       Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
         - icon: fa-solid fa-envelope
           url: mailto:hygu@smail.nju.edu.cn
@@ -402,7 +402,7 @@ color_scheme:
     # 网站背景上的文字
     site_inner: '#fff'
     # 网站页脚文字
-    site_footer: '#fff'
+    site_fojinrishici: true #oter: '#fff'
 
     # 卡片背景色
     card: '#fff'
